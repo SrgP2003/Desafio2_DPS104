@@ -68,8 +68,8 @@ const Form = ({ reservas, setReservas, guardarMostrarForm, guardarReservasStorag
             Alert.alert('Error', 'La cantidad de personas debe ser un número mayor a 0', [{ text: 'OK' }]);
             return;
         }
-        // Crear una nueva cita
-        const cita = {
+        // Crear una nueva reserva
+        const reserva = {
             nombre,
             plato,
             bebida,
@@ -81,7 +81,7 @@ const Form = ({ reservas, setReservas, guardarMostrarForm, guardarReservasStorag
             numPersonas,
             id: shortid()
         };
-        const reservasNuevo = [...reservas, cita];
+        const reservasNuevo = [...reservas, reserva];
         setReservas(reservasNuevo);
         guardarReservasStorage(JSON.stringify(reservasNuevo));
         guardarMostrarForm(false);
