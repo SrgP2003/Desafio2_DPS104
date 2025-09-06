@@ -5,9 +5,11 @@ import shortid from "react-id-generator";
 import colors from '../utils/colors';
 
 const Form = ({ reservas, setReservas, guardarMostrarForm, guardarReservasStorage }) => {
-    //variables para el formulario
+    // Variables para el formulario
     const [nombre, guardarNombre] = useState('');
     const [plato, guardarPlato] = useState('');
+    const [bebida, guardarBebida] = useState('');
+    const [postre, guardarPostre] = useState('');
     const [telefono, guardarTelefono] = useState('');
     const [fecha, guardarFecha] = useState('');
     const [hora, guardarHora] = useState('');
@@ -45,6 +47,8 @@ const Form = ({ reservas, setReservas, guardarMostrarForm, guardarReservasStorag
         if (
             nombre.trim() === '' ||
             plato.trim() === '' ||
+            bebida.trim() === '' ||
+            postre.trim() === '' ||
             telefono.trim() === '' ||
             fecha.trim() === '' ||
             hora.trim() === '' ||
@@ -68,6 +72,8 @@ const Form = ({ reservas, setReservas, guardarMostrarForm, guardarReservasStorag
         const cita = {
             nombre,
             plato,
+            bebida,
+            postre,
             telefono,
             fecha,
             hora,
@@ -82,6 +88,8 @@ const Form = ({ reservas, setReservas, guardarMostrarForm, guardarReservasStorag
         // Resetear el formulario
         guardarNombre('');
         guardarPlato('');
+        guardarBebida('');
+        guardarPostre('');
         guardarTelefono('');
         guardarFecha('');
         guardarHora('');
@@ -113,6 +121,22 @@ const Form = ({ reservas, setReservas, guardarMostrarForm, guardarReservasStorag
                         style={styles.input}
                         onChangeText={texto => guardarPlato(texto)}
                         value={plato}
+                    />
+                </View>
+                <View>
+                    <Text style={styles.label}>Bebida:</Text>
+                    <TextInput
+                        style={styles.input}
+                        onChangeText={texto => guardarBebida(texto)}
+                        value={bebida}
+                    />
+                </View>
+                <View>
+                    <Text style={styles.label}>Tipo de postre:</Text>
+                    <TextInput
+                        style={styles.input}
+                        onChangeText={texto => guardarPostre(texto)}
+                        value={postre}
                     />
                 </View>
                 <View>
@@ -173,7 +197,7 @@ const Form = ({ reservas, setReservas, guardarMostrarForm, guardarReservasStorag
                     />
                 </View>
                 <View>
-                    <TouchableHighlight onPress={() => createNewReservation()} style={styles.btnSubmit}>
+                    <TouchableHighlight onPress={createNewReservation} style={styles.btnSubmit}>
                         <Text style={styles.textoSubmit}>Crear Nueva Reserva</Text>
                     </TouchableHighlight>
                 </View>

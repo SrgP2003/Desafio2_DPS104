@@ -23,6 +23,14 @@ const Reserva = ({ item, eliminarReserva }) => {
                 <Text style={styles.texto}>{item.plato}</Text>
             </View>
             <View>
+                <Text style={styles.label}>Bebida: </Text>
+                <Text style={styles.texto}>{item.bebida}</Text>
+            </View>
+            <View>
+                <Text style={styles.label}>Tipo de postre: </Text>
+                <Text style={styles.texto}>{item.postre}</Text>
+            </View>
+            <View>
                 <Text style={styles.label}>Cantidad de personas: </Text>
                 <Text style={styles.texto}>{item.numPersonas}</Text>
             </View>
