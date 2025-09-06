@@ -1,0 +1,1 @@
+Para ver el proyecto, ejecutar el comando "git clone https://github.com/SrgP2003/Desafio2_DPS104" en Git Bash o en Windows PowerShell. Luego de haberse clonado en la terminal, entrar a la ruta donde se encuentra y abrirlo con VSCode.
